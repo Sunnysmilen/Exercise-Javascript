@@ -41,28 +41,19 @@ const instructors = [
   },
 ];
 
-let instructor;
-console.log(
-  instructors.reduce(weekendInstuctor) 
-
-    if (weekendInstructors = (availability === "weekend") && (availability === "all")) || (specialities === "Javascript")
-  ) weekendInstructors.reduce
+const weekendInstructors = instructors.filter(
+  (instructors) =>
+    (instructors.specialities.includes("Javascript") &&
+      instructors.availability === "weekend") ||
+    instructors.availability === "all"
 );
-console.log(instructor);
-};
-// const weekendInstructors = instructors.filter(
-//   (instructors) =>
-//     (instructors.specialities.includes("Javascript") &&
-//       instructors.availability === "weekend") ||
-//     instructors.availability === "all"
-// );
 
-// weekendInstructors.forEach((instructor) => {
-//   let message = `Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`;
+weekendInstructors.forEach((instructor) => {
+  let message = `Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`;
 
-//   if (instructor.specialities.includes("Python")) {
-//     message += " and you need to prepare a Python workshop";
-//   }
+  if (instructor.specialities.includes("Python")) {
+    message += " and you need to prepare a Python workshop";
+  }
 
-//   console.log(message);
-// });
+  console.log(message);
+});
